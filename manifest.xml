@@ -1,0 +1,18 @@
+<package>
+  <description brief="MaRTA PCDE component">
+  Ths component provides communication with the Power Control and Distribution Electronics of the MaRTA rover.
+  </description>
+  <author>Maximilian Ehrhardt/maximilian.ehrhardt@esa.int</author>
+  <license></license>
+  <url>http://</url>
+  <logo>http://</logo>
+  <depend package="base/cmake" />
+  <!--
+   To add any dependencies use the depend tag
+  <depend package="dummy-dependency-0" />
+	...
+  <depend package="dummy-dependency-n-1" />
+  <depend package="dummy-dependency-n" />
+  -->
+  <depend package="drivers/pcde" />
+</package>
