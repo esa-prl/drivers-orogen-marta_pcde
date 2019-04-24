@@ -87,9 +87,16 @@ bool Task::configureHook()
     if (! TaskBase::configureHook())
         return false;
 
-    /** Configure serial connectiom */
-    serialConfig config;
-    
+    /** Configure serial connection */
+    SerialConfig config;
+
+    config.port=_serial_port.get();
+    config.baudrate=_serial_baudrate.get();
+    config.read_timeout_ms=_serial_read_timeout.get();
+    config.write_timeout_ms=_serial_write_timeout.get();
+
+    driver->setupSerial(config);
+
     return true;
 }
 bool Task::startHook()

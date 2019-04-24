@@ -30,7 +30,6 @@ tasks/Task.cpp, and will be put in the pcde namespace.
 	friend class TaskBase;
     protected:
         std::unique_ptr<PCDE> driver;
-
     public:
         /** TaskContext constructor for Task
          * \param name Name of the task. This name needs to be unique to make it identifiable via nameservices.

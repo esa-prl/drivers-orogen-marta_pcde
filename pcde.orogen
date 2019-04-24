@@ -10,12 +10,14 @@ task_context "Task" do
     # ***************************
     # **** Driver Properties ****
     # ***************************
-    property('config_value', '/std/string', '/dev/ttyS1').
+    property('serial_port', '/std/string', '/dev/ttyS1').
         doc 'The device port'
     property('serial_baudrate', 'int', 19200).
         doc 'Baudrate to open the serial com port'
-    property('serial_timeout', 'float', 1.0).
-        doc 'Timeout for the serial com port'
+    property('serial_read_timeout', 'float', 1.0).
+        doc 'Timeout for read operation on serial com port'
+    property('serial_write_timeout', 'float', 1.0).
+        doc 'Timeout for write operations on serial com port'
 
     # ***************************
     # **** Output ports ****
