@@ -4,6 +4,7 @@
 #define PCDE_TASK_TASK_HPP
 
 #include "pcde/TaskBase.hpp"
+#include <pcde/PCDE.hpp>
 
 namespace pcde{
 
@@ -28,8 +29,7 @@ tasks/Task.cpp, and will be put in the pcde namespace.
     {
 	friend class TaskBase;
     protected:
-
-
+        std::unique_ptr<PCDE> driver;
 
     public:
         /** TaskContext constructor for Task
@@ -41,13 +41,18 @@ tasks/Task.cpp, and will be put in the pcde namespace.
         /** TaskContext constructor for Task
          * \param name Name of the task. This name needs to be unique to make it identifiable for nameservices.
          * \param engine The RTT Execution engine to be used for this task, which serialises the execution of all commands, programs, state machines and incoming events for a task.
-         * 
+         *
          */
         Task(std::string const& name, RTT::ExecutionEngine* engine);
 
         /** Default deconstructor of Task
          */
-	~Task();
+	    ~Task();
+
+        /**
+         * Creates output and processes potential input
+         */
+        void processIO();
 
         /** This hook is called by Orocos when the state machine transitions
          * from PreOperational to Stopped. If it returns false, then the

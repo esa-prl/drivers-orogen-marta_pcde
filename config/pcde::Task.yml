@@ -1,0 +1,7 @@
+--- name:MaRTA
+# the device port
+serial_port: /dev/ttyS1
+# Baud rate to open the serial com_port.
+serial_baudrate: 19200
+# The timeout for read and write instructions ofeer serial port
+serial_timeout: 0.1
