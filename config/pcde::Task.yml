@@ -1,6 +1,6 @@
 --- name:MaRTA
 # the device port
-serial_port: /dev/ttyS1
+serial_port: /dev/marta-pcde
 # Baud rate to open the serial com_port.
 serial_baudrate: 19200
 # The timeout for read and write instructions ofeer serial port
